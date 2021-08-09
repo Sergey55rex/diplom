@@ -6,7 +6,10 @@ import com.xwray.groupie.kotlinandroidextensions.Item
 
 import kotlinx.android.synthetic.main.item_post.*
 import ru.netology.R
+import ru.netology.category.DataPost
 import ru.netology.category.Post
+import java.util.*
+import java.util.Collections.addAll
 
 
 class PostItem(val post: Post): Item() {
@@ -14,14 +17,15 @@ class PostItem(val post: Post): Item() {
     override fun getLayout() = R.layout.item_post
 
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
-
         viewHolder.text_post.text = post.author
         viewHolder.text_post2.text = post.content
 
         Picasso.get()
             .load(post.authorAvatar)
             .into(viewHolder.image_post)
+
     }
+
 }
 
 

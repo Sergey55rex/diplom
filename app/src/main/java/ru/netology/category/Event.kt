@@ -1,6 +1,5 @@
 package ru.netology.category
 
-import android.net.wifi.aware.PublishConfig
 import ru.netology.attach.Attachment
 
 data class Event(
@@ -12,7 +11,7 @@ data class Event(
         val published: Long,
         val type: String,
         val link: String,
-        val speakerIds: String,
+        val speakerIds: Array<Int>? =null,
         val attachment: Attachment?= null
 
 )
